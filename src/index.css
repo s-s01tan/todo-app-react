@@ -1,0 +1,16 @@
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: "BarlowCondensed";
+  src: url("./assets/fonts/Barlow_Condensed/BarlowCondensed-Light.ttf")
+    format("truetype");
+}

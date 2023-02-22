@@ -1,0 +1,28 @@
+.footer-link {
+  text-decoration: none;
+  color: "#000" !important;
+  padding: 2px;
+}
+
+.github-link {
+  color: #505050;
+}
+
+.linkedin-link {
+  color: #1e4875;
+}
+
+.whatsapp-link {
+  color: #2b7d2b;
+}
+
+.gmail-link {
+  color: #d2414d;
+}
+
+.github-link:hover,
+.linkedin-link:hover,
+.whatsapp-link:hover,
+.gmail-link:hover {
+  color: #000;
+}

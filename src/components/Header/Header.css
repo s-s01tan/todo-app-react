@@ -1,0 +1,13 @@
+.main-header,
+.second-header {
+  color: #fff;
+  text-align: center;
+}
+
+.main-header {
+  padding-top: 12px;
+}
+
+.second-header {
+  padding-top: 6px;
+}
