@@ -1,5 +1,6 @@
 import { Fragment } from "react";
 import Footer from "../../components/Footer/Footer";
+import Form from "../../components/Form/Form";
 import Header from "../../components/Header/Header";
 import TodoList from "../../components/TodoList/TodoList";
 import "./Home.css";
@@ -46,6 +47,7 @@ const Home = () => {
   return (
     <Fragment>
       <Header />
+      <Form />
       <TodoList todos={tmpData} />
       <Footer />
     </Fragment>

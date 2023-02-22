@@ -1,3 +1,4 @@
+import DeleteIcon from "@mui/icons-material/Delete";
 import {
   Checkbox,
   IconButton,
@@ -5,12 +6,13 @@ import {
   ListItemButton,
   ListItemIcon,
   ListItemText,
+  Typography,
 } from "@mui/material";
 import { Fragment } from "react";
-import DeleteIcon from "@mui/icons-material/Delete";
 import "./Todo.css";
 
 const handleToggle = (id: string) => {};
+const handleDelete = (id: string) => {};
 
 const Todo: React.FC<TodoProps> = (props) => {
   const { todo } = props;
@@ -21,7 +23,11 @@ const Todo: React.FC<TodoProps> = (props) => {
       <ListItem
         key={id}
         secondaryAction={
-          <IconButton edge="end" aria-label="comments">
+          <IconButton
+            edge="end"
+            aria-label="comments"
+            onClick={() => handleDelete(id)}
+          >
             <DeleteIcon />
           </IconButton>
         }
@@ -40,16 +46,26 @@ const Todo: React.FC<TodoProps> = (props) => {
           <ListItemText
             id={`${id}-${title}`}
             sx={{ textDecoration: isCompleted ? "line-through" : "none" }}
-            className="custom-font"
           >
-            {title}
+            <Typography
+              variant="caption"
+              className="custom-font"
+              sx={{ fontSize: "16px" }}
+            >
+              {title}
+            </Typography>
           </ListItemText>
           <ListItemText
             id={`${id}-${description}`}
             sx={{ textDecoration: isCompleted ? "line-through" : "none" }}
-            className="custom-font"
           >
-            {description}
+            <Typography
+              variant="caption"
+              className="custom-font"
+              sx={{ fontSize: "16px" }}
+            >
+              {description}
+            </Typography>
           </ListItemText>
         </ListItemButton>
       </ListItem>
