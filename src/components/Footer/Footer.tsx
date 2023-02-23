@@ -22,17 +22,16 @@ export const Footer: FC = (): ReactElement => {
     >
       <Container maxWidth="lg">
         <Grid container justifyContent="center">
-          <Grid item xs={12}>
+          <Grid item xs={12} display="flex" justifyContent="center">
             <Typography
               color="black"
               variant="h5"
               className="custom-font"
               textAlign="center"
+              paddingRight="4px"
             >
               s01tan
             </Typography>
-          </Grid>
-          <Grid item xs={12} display="flex" justifyContent="center">
             <Link
               to="mailto:soltanlisoltan.js@gmail.com"
               target="_blank"
@@ -41,7 +40,7 @@ export const Footer: FC = (): ReactElement => {
               <EmailIcon sx={{ marginLeft: "2px" }} />
             </Link>
             <Link
-              to="https://github.com/s-s01tan/todo-app-react"
+              to="https://github.com/s-s01tan"
               target="_blank"
               className="footer-link custom-font github-link"
             >

@@ -7,10 +7,12 @@ import "./Form.css";
 const validationSchema = yup.object({
   title: yup
     .string()
+    .trim()
     .min(1, "Title should contain at least 1 character")
     .required("Title is required"),
   description: yup
     .string()
+    .trim()
     .min(1, "Description should contain at least 1 character")
     .required("Description is required"),
 });
@@ -20,14 +22,14 @@ const initialValues = {
   description: "",
 };
 
-const handleSubmit = (values: any) => {};
-
 const Form = () => {
   const formik = useFormik({
     initialValues,
     validationSchema,
     onSubmit: (values) => handleSubmit(values),
   });
+
+  const handleSubmit = (values: any) => {};
 
   return (
     <Fragment>
