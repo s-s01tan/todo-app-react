@@ -1,4 +1,6 @@
-import { Button, TextField } from "@mui/material";
+import {
+  Button, TextField
+} from "@mui/material";
 import { useFormik } from "formik";
 import { Fragment } from "react";
 import * as yup from "yup";
@@ -9,12 +11,12 @@ const validationSchema = yup.object({
     .string()
     .trim()
     .min(1, "Title should contain at least 1 character")
-    .required("Title is required"),
+    .required("Required field"),
   description: yup
     .string()
     .trim()
     .min(1, "Description should contain at least 1 character")
-    .required("Description is required"),
+    .required("Required field"),
 });
 
 const initialValues = {
@@ -45,6 +47,19 @@ const Form = () => {
             value={formik.values.title}
             onChange={formik.handleChange}
             error={formik.touched.title && Boolean(formik.errors.title)}
+            InputProps={{
+              style: {
+                color: 'black',
+                borderColor: 'black',
+              },
+            }}
+            InputLabelProps={{
+              style: { color: 'black' },
+            }}
+            FormHelperTextProps={{
+              style: { background: "#000", color: '#ff6464', margin: 0 },
+            }}
+            helperText={formik.errors.title}
           />
           <TextField
             fullWidth
@@ -58,6 +73,19 @@ const Form = () => {
             error={
               formik.touched.description && Boolean(formik.errors.description)
             }
+            InputProps={{
+              style: {
+                color: 'black',
+                borderColor: 'black',
+              },
+            }}
+            InputLabelProps={{
+              style: { color: 'black' },
+            }}
+            FormHelperTextProps={{
+              style: { background: "#000", color: "#ff6464", margin: 0 },
+            }}
+            helperText={formik.errors.description}
           />
           <Button
             variant="contained"
